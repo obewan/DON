@@ -8,7 +8,8 @@ It offer some dtd, xsd and sql constraints for DON documents.
 ## Grammar
 ```
 comment = ( "//", string ) | ( "/*", string, "*/" ) ;
-header = '[#DON ', version, encodage, schema?, include?, ']' ;
+donHeader = '[#DON ', version, encodage, schema?, include?, ']' ; (* DON header *)
+dodHeader = '[#DOD ', version, encodage, ']' ; (* DOD header on an external DOD file *)
 version = "version(", string, ")" ;
 encodage = "encodage(", string, ")" ;
 schema = "schema(", location*, ")" ; (* location of DOD external schemas with prefixes, like xsd:schema *)
@@ -42,7 +43,7 @@ totalDigits = "totalDigits(", integer, ")" ; (* maximum digits allowed for float
 
 ```
 
-Example :
+Example, DOD description in a DON file :
 ```
 [#DON version(1.0-DRAFT) encodage(UTF-8) schema(https://github.com/obewan/DON/schema)]
 [document (menu*)]
@@ -52,5 +53,22 @@ Example :
 [menuItem (label, onClick?)]
 [label (#string(notNull, whiteSpace(collapse)]
 [onClick (#string)]
+
+{ 
+	document : { 
+		menu : { 
+			id : 1, 
+			value : "file", 
+			menuItem : { 
+				label : "new", 
+				onClick : "new()" 
+			} 
+			menuItem : { 
+				label : "open", 
+				onClick : "open()" 
+			} 
+		} //comment : end menu 1 
+	}
+}
 ```
 
