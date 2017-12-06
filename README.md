@@ -1,8 +1,7 @@
-# DON
-### Data Object Notation 
+# Data Object Notation
 ### ** DRAFT **
 
-DON, the Data Object Notation, take best parts of XML, DTD, XSD, JSON and SQL constraints, for a textual file format that offer data description, constraints, portability, easy use and reading. 
+The Data Object Notation (DON), take best parts of XML, DTD, XSD and JSON, for a textual file format that offer data description, constraints, portability, easy use and reading. 
 
 Features :
 

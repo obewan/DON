@@ -1,8 +1,7 @@
-# DOD
-### Data Object Description
+# Data Object Description
 ### ** 1.0-DRAFT **
 
-DOD (Data Object Description) is the format for descriptive header of a DON (Data Object Notation) file, like the DTD of XML files.
+Data Object Description (DOD) is the format for descriptive header of a Data Object Notation (DON) file, like the DTD of XML files.
 It offer some dtd, xsd and sql constraints for DON documents. 
 
 
