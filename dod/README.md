@@ -31,14 +31,15 @@ array = "array(" , typename, ")" ;
 object = name;
 
 constraints = '(', constraint*, ')' ;
-constraint = required, min, max, minExclusive, maxExclusive, range, notNull, whiteSpace, pattern, unique, default, totalDigits;
+constraint = required, min, max, minExclusive, maxExclusive, range, length, notNull, whiteSpace, pattern, unique, default, totalDigits;
 
 required = "required" ; (* mandatory value, can not be null or empty *)
 min = "min(", integer | float, ")" ; (* inclusive minimum value for an integer or a float (using a float) and minimum length for a string. Can be min(0) for an unsigned int, and min(1) for a non-empty string. *)
 max = "max(", integer | float , ")" ; (* inclusive maximum value for an integer or a float (using a float)  and maximum length for a string. Can be max(0) for a negative int. *)
 minExclusive = "minExclusive(", integer | float, ")" ;
 maxExclusive = "maxExclusive(", integer | float, ")" ;
-range = "range(", integer | float, ",", integer | float, ")"; (* inclusive minimum and maximum range, for integer and floats. *)
+range = "range(", integer | float, ",", integer | float, ")" ; (* inclusive minimum and maximum range, for integer and floats. *)
+length = "length(", integer, ")" ; (* fixe length for a string, like a phone number for example *)
 notNull = "notNull" ; (* not null value constraint, for any type, like the sql "not null" *)
 whiteSpace = "whiteSpace(", "preserve" | "replace" | "collapse", ")" ; (* preserve, replace or collapse the white spaces, like the xsd:whiteSpace restriction. *)
 pattern = regExpr ; (* regular expression constraint, like the xsd:pattern restriction. *)
