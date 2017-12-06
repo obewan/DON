@@ -23,7 +23,7 @@ Features :
 [id (#integer(min(0), unique)]
 [value (#string(notNull, max(30))]
 [menuItem (label, onClick?)]
-[label (#string(notNull, whiteSpace(collapse)]
+[label (#string(notNull, whiteSpace(collapse))]
 [onClick (#string)]
 
 {

@@ -53,7 +53,7 @@ Example, DOD description in a DON file :
 [id (#integer(min(0))]
 [value (#string(notNull, max(30))]
 [menuItem (label, onClick?)]
-[label (#string(notNull, whiteSpace(collapse)]
+[label (#string(notNull, whiteSpace(collapse))]
 [onClick (#string)]
 
 { 
