@@ -45,7 +45,7 @@ totalDigits = "totalDigits(", integer, ")" ; (* maximum digits allowed for float
 
 Example, DOD description in a DON file :
 ```
-[#DON version(1.0-DRAFT) encodage(UTF-8) schema(https://github.com/obewan/DON/schema)]
+[#DON version(1.0-DRAFT) encodage(UTF-8)]
 [document (menu*)]
 [menu (id, value, menuItem*)]
 [id (#integer(min(0))]
