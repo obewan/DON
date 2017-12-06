@@ -11,7 +11,8 @@ comment = ( "//", string ) | ( "/*", string, "*/" ) ;
 header = '[#DON ', version, encodage, schema?, include?, ']' ;
 version = "version(", string, ")" ;
 encodage = "encodage(", string, ")" ;
-schema = "schema(", url, ")"; (* reference of the DOD schema version *)
+schema = "schema(", location*, ")" ; (* location of DOD external schemas with prefixes, like xsd:schema *)
+location = prefix, "=", uri ; 
 include = "include(",  uri, ")"; (* include an external DOD file *)
 
 element = '[', name, list?, ']' ;
