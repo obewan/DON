@@ -20,12 +20,15 @@ element = '[', name, list?, ']' ;
 name = string ;
 list = '(', expression*, ')' ;
 expression = name, operator? ;
+operator = '+', '*', '?' ; (* Common element operators like in dtd (+ one or more occurences, * zero or more occurences, ? zero or one occurence)  *)
 attribut = '[', name, type?, ']' ;
 
 type = "(#", typeName, constraints? ')' ;
-typeName = "boolean" | "float" | "integer" | "string" | "date" | "time" | enumeration ;
+typeName = "boolean" | "float" | "integer" | "string" | "date" | "time" | "null" | enumeration | array | object ;
 
 enumeration = "string(" , string, ("|", string)* , ")" ;
+array = "array(" , typename, ")" ;
+object = name;
 
 constraints = '(', constraint*, ')' ;
 constraint = required, min, max, minExclusive, maxExclusive, range, notNull, whiteSpace, pattern, unique, default, totalDigits;
